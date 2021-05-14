@@ -1,11 +1,12 @@
 import React from 'react';
+import { checkIfDataInLocalStorage, getLocalStorageNotes } from '../util/NoteUtil';
 import NoteComponent from './NoteComponent'
 
 class NoteAreaComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            notes: []
+            notes: checkIfDataInLocalStorage?getLocalStorageNotes():[]
         }
     }
 
@@ -16,12 +17,10 @@ class NoteAreaComponent extends React.Component {
             this.setState({
                 notes: currentNotes
             })
-            console.log('current state for NoteAreaComponent : ' + JSON.stringify(this.state));
         }
     }
 
     getRemovedData = (data)=>{
-        console.log('data removed '+JSON.stringify(data));
         let tempNotes = this.state.notes;
         let position = -1;
         for(let i=0;i<tempNotes.length;i++){
@@ -35,6 +34,7 @@ class NoteAreaComponent extends React.Component {
             this.setState({
                 notes: tempNotes
             })
+            localStorage.removeItem(data.timestamp);
         }
     }
 
@@ -51,8 +51,8 @@ class NoteAreaComponent extends React.Component {
                     <table className="table table-striped">
                         <thead>
                             <tr>
-                                <th>Message</th>
                                 <th>Timestamp</th>
+                                <th>Message</th>
                                 <th>Action</th>
                             </tr>
                         </thead>

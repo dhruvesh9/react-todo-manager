@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatNoteMessage } from '../util/NoteUtil';
 import BannerMessageComponent from './BannerMessageComponent';
 
 var i = 0;
@@ -24,11 +25,12 @@ class TextAreaComponent extends React.Component {
 
     sendData = (e) => {
         let noteMessage = document.getElementById('addNote').value;
-        let bannerArea = document.getElementById('bannerArea');
-
-        if (!this.validate(noteMessage, bannerArea)) {
+        if (!this.validate(noteMessage)) {
             return;
         }
+
+        noteMessage = formatNoteMessage(noteMessage);
+
         let data = {
             message: noteMessage,
             timestamp: new Date().getTime()
@@ -37,13 +39,13 @@ class TextAreaComponent extends React.Component {
         this.props.callbackToContainer(data);
     }
 
-    validate(noteMessage, bannerArea) {
+    validate(noteMessage) {
         let isValid = false;
         let errorMessage = "";
         if (noteMessage === '') {
             errorMessage = "The note can not be empty, please fill the text area.";
-        } else if (noteMessage.length > 50) {
-            errorMessage = "The note max size exceeded, the max limit is 50 characters.";
+        } else if (noteMessage.length > 100) {
+            errorMessage = "The note max size exceeded, the max limit is 100 characters.";
         } else {
             isValid = true;
         }

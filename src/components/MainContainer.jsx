@@ -12,6 +12,7 @@ class MainContainer extends React.Component {
 
     getData = (data) =>{
         console.log('Data from TextAreaComponent -> '+JSON.stringify(data));
+        localStorage.setItem(data.timestamp,data.message);
         this.setState({
             newNoteData : data
         })
