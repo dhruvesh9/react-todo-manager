@@ -2,7 +2,7 @@ import React from 'react';
 import BannerMessageComponent from './BannerMessageComponent';
 
 var i = 0;
-var txt = 'Manage notes, todos, tasks, birthdays and literally anything.';
+var txt = 'Manage list, checklist, notes, todos, tasks, birthdays and literally anything.';
 var speed = 100;
 
 function typeWriter() {

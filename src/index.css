@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar p{
+  font-weight: 700;
+  font-size: 35px;
+  text-shadow: 2px 1px black;
+}
+
+.todo-font{
+  font-size: 20px;
+  font-weight: 700;
+}
