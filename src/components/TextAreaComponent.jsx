@@ -68,7 +68,7 @@ class TextAreaComponent extends React.Component {
                     <div className="bs-docs-header" id="content" tabIndex="-1">
                         <blockquote className="">
                             <h1>ADD NOTE</h1>
-                            <cite id="citeType"></cite>
+                            <tt id="citeType"></tt>
                         </blockquote>
                     </div>
                     <div className="form-group">

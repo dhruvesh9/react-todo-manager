@@ -44,7 +44,7 @@ class NoteAreaComponent extends React.Component {
 
         if(noteList.length>0){
             return (
-                <div className="row">
+                <div className="">
                     <div>
                         <h3 className="text-danger">Current number of notes : {this.state.notes.length}</h3>
                     </div>
@@ -64,7 +64,7 @@ class NoteAreaComponent extends React.Component {
             );
         }else{
             return (
-                <div className="row">
+                <div className="">
                 </div>
             );
         }
