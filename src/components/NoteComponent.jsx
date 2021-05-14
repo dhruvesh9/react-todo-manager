@@ -21,7 +21,7 @@ export default class NoteComponent extends React.Component {
                     <h5 className="text-info">{this.props.timestamp}</h5>
                 </td>
                 <td>
-                    <h5 className="text-info" dangerouslySetInnerHTML={{ __html: this.props.message }}></h5>
+                    <h5 className="text-info" style={{ whiteSpace: 'pre-wrap' }}>{this.props.message}</h5>
                 </td>
                 <td>
                     <button type="button" className="btn btn-danger btn-sm" onClick={this.sendRemovedData}>

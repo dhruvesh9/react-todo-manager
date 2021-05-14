@@ -18,5 +18,5 @@ export function getLocalStorageNotes(){
 }
 
 export function formatNoteMessage(message){
-    return message.replaceAll("\n","<br/>");
+    return message.replaceAll("\n","\u000A");
 }
