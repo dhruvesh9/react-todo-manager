@@ -1,6 +1,7 @@
 import React from 'react';
 import { formatNoteMessage } from '../util/NoteUtil';
-import BannerMessageComponent from './BannerMessageComponent';
+import BannerMessageComponent, { MessageType } from './BannerMessageComponent';
+import ReactDOM from 'react-dom';
 
 var i = 0;
 var txt = 'Manage list, checklist, notes, todos, tasks, birthdays and literally anything.';
@@ -17,15 +18,14 @@ function typeWriter() {
 class TextAreaComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            errorMessage: ""
-        }
-
     }
 
     sendData = (e) => {
         let noteMessage = document.getElementById('addNote').value;
-        if (!this.validate(noteMessage)) {
+        let errorMessage = this.validate(noteMessage);
+        if (errorMessage !== "") {
+            ReactDOM.render(<BannerMessageComponent type={MessageType.WARNING} bannerMessage={errorMessage} />
+        ,document.getElementById('bannerMsgArea'));
             return;
         }
 
@@ -50,11 +50,7 @@ class TextAreaComponent extends React.Component {
             isValid = true;
         }
 
-        this.setState({
-            errorMessage: errorMessage
-        });
-
-        return isValid;
+        return errorMessage;
     }
 
     componentDidMount() {
@@ -65,7 +61,6 @@ class TextAreaComponent extends React.Component {
         return (
 
             <div className="">
-                <BannerMessageComponent id="bannerArea" bannerMessage={this.state.errorMessage} />
                 <div>
                     <div className="bs-docs-header" id="content" tabIndex="-1">
                         <blockquote className="">

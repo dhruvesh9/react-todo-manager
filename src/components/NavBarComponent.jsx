@@ -11,17 +11,7 @@ export default class NavBarComponent extends React.Component {
                     </div>
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav navbar-right">
-                            <li className="todo-font"><a>Login</a></li>
-                            <li className="dropdown">
-                                <a className="dropdown-toggle todo-font" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dashboard<span className="caret"></span></a>
-                                <ul className="dropdown-menu">
-                                    <li><a>Action</a></li>
-                                    <li><a>Another action</a></li>
-                                    <li><a>Something else here</a></li>
-                                    <li role="separator" className="divider"></li>
-                                    <li><a>Separated link</a></li>
-                                </ul>
-                            </li>
+                            <li className="todo-font"><a href="#">Login</a></li>
                         </ul>
                     </div>
                 </div>

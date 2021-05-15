@@ -22,3 +22,7 @@ code {
   font-size: 20px;
   font-weight: 700;
 }
+
+.btn .btn-primary{
+  cursor: pointer;
+}

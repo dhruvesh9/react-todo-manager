@@ -1,6 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { checkIfDataInLocalStorage, getLocalStorageNotes } from '../util/NoteUtil';
 import NoteComponent from './NoteComponent'
+import BannerMessageComponent, { MessageType } from './BannerMessageComponent';
 
 class NoteAreaComponent extends React.Component {
     constructor(props) {
@@ -33,7 +35,9 @@ class NoteAreaComponent extends React.Component {
             tempNotes.splice(position,1);
             this.setState({
                 notes: tempNotes
-            })
+            });
+            ReactDOM.render(<BannerMessageComponent type={MessageType.ERROR} bannerMessage="Note deleted." />
+        ,document.getElementById('bannerMsgArea'));
             localStorage.removeItem(data.timestamp);
         }
     }
