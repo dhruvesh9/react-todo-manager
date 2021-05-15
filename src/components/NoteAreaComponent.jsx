@@ -44,7 +44,8 @@ class NoteAreaComponent extends React.Component {
 
     render() {
 
-        let noteList = this.state.notes.map(data => <NoteComponent callbackRemovedData={this.getRemovedData} key={data.timestamp} message={data.message} timestamp={data.timestamp} />)
+        let noteList = this.state.notes.map(data => <NoteComponent callbackRemovedData={this.getRemovedData} 
+            key={data.timestamp} message={data.message} timestamp={data.timestamp} />)
 
         if(noteList.length>0){
             return (
