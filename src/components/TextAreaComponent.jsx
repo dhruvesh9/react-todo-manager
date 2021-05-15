@@ -16,9 +16,6 @@ function typeWriter() {
 }
 
 class TextAreaComponent extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     sendData = (e) => {
         let noteMessage = document.getElementById('addNote').value;
@@ -40,14 +37,11 @@ class TextAreaComponent extends React.Component {
     }
 
     validate(noteMessage) {
-        let isValid = false;
         let errorMessage = "";
         if (noteMessage === '') {
             errorMessage = "The note can not be empty, please fill the text area.";
         } else if (noteMessage.length > 100) {
             errorMessage = "The note max size exceeded, the max limit is 100 characters.";
-        } else {
-            isValid = true;
         }
 
         return errorMessage;

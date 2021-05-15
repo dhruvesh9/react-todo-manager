@@ -1,10 +1,6 @@
 import React from 'react';
 
 export default class NoteComponent extends React.Component {
-    
-    constructor(props){
-        super(props)
-    }
 
     sendRemovedData = (e)=>{
         let data = {

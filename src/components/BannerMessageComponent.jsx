@@ -3,10 +3,6 @@ import $ from 'jquery';
 
 export default class BannerMessageComponent extends React.Component {
 
-    constructor(props){
-        super(props);
-    }
-
     scrollToTop(){
         $('html,body').animate({
             scrollTop: $("#bannerMsgArea").offset().top-25},'slow');
