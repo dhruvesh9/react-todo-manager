@@ -12,7 +12,7 @@ https://react-todo-manage.herokuapp.com/
 
 In the project directory, you can run:
 
-### `nppm install`
+### `npm install`
 
 Installs all the dependencies needed from the application
 
